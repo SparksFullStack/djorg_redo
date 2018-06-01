@@ -1,0 +1,1 @@
+web: gunicorn djorg_redo.wsgi
