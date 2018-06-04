@@ -123,6 +123,6 @@ STATIC_URL = '/static/'
 # Django REST framework boilerplate
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsorAnonReadOnly',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }

@@ -24,6 +24,7 @@ router = routers.DefaultRouter()
 router.register(r'notes', NoteViewSet)
 
 urlpatterns = [
+    path('api/', include(router.urls)),
     path('', TemplateView.as_view(template_name='djorg_base.html')),
     path('admin/', admin.site.urls),
     path('bookmarks/', include('bookmarks.urls'))
