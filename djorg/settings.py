@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'bookmarks',
     'notes',
     'rest_framework',
+    'rest_framework.authtoken',
     'graphene_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,11 +122,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+from rest_framework.authentication import SessionAuthentication, BaseAuthentication
+
 # Django REST framework boilerplate
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-    ]
+    ],
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionsAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
+    )
 }
 
 # Graphene boileplate to identify where the schema is
